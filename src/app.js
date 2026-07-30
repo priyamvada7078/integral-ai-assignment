@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const queryRoute = require("./routes/query");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
-
+app.use("/query", queryRoute);
 // ======================
 // Routes
 // ======================
