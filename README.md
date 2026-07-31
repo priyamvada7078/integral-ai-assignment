@@ -2,7 +2,7 @@
 
 # Integral AI Assignment
 
-### *Building a Cost-Aware, Observable, and Deployment-Ready AI Agent Pipeline*
+### *Building a Observable, and Deployment-Ready AI Agent Pipeline*
 
 <p>
 
