@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Integral AI Assignment
+# Integral AI Assignment
 
 ### *Building a Cost-Aware, Observable, and Deployment-Ready AI Agent Pipeline*
 
@@ -20,7 +20,7 @@
 
 ---
 
-# 📖 Overview
+# Overview
 
 This repository contains my submission for the **Integral AI Engineering Assignment**.
 
@@ -37,7 +37,7 @@ The application simulates a production-style AI pipeline where every request flo
 
 ---
 
-# ✨ Key Highlights
+# Key Highlights
 
 | Feature | Status |
 |----------|:------:|
@@ -53,7 +53,7 @@ The application simulates a production-style AI pipeline where every request flo
 
 ---
 
-# 🎯 Assignment Objectives
+# Assignment Objectives
 
 This project addresses all three parts of the assignment.
 
@@ -65,7 +65,7 @@ This project addresses all three parts of the assignment.
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```text
                         ┌──────────────┐
@@ -120,7 +120,7 @@ This project addresses all three parts of the assignment.
 
 ---
 
-# ⚙️ Pipeline Workflow
+# Pipeline Workflow
 
 Every request passes through the following stages:
 
@@ -134,9 +134,9 @@ Every request passes through the following stages:
 
 ---
 
-# ✨ Features
+# Features
 
-## 🤖 AI Pipeline
+## AI Pipeline
 
 - Modular multi-agent workflow
 - Planner → Retriever → Compressor → Reasoner → Validator → Formatter
@@ -144,7 +144,7 @@ Every request passes through the following stages:
 
 ---
 
-## ⚡ Performance
+## Performance
 
 - Context compression
 - Token estimation
@@ -155,7 +155,7 @@ Every request passes through the following stages:
 
 ---
 
-## 🔍 Observability
+## Observability
 
 - Request IDs
 - Health endpoint
@@ -165,7 +165,7 @@ Every request passes through the following stages:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 - Docker configuration
 - Docker Compose support
@@ -174,7 +174,7 @@ Every request passes through the following stages:
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 integral-ai-assignment
@@ -263,7 +263,7 @@ integral-ai-assignment
 
 ![Demo Endpoint](screenshots/demo.png)
 
-# 📌 Part 1 — Token & Cost Optimization
+#  Part 1 — Token & Cost Optimization
 
 ## Problem Statement
 
@@ -282,7 +282,7 @@ The goal was to optimize the pipeline without sacrificing answer quality.
 
 ---
 
-# ✅ Optimization 1 — Context Compression
+# Optimization 1 — Context Compression
 
 ### Objective
 
@@ -325,7 +325,7 @@ For this assignment, the trade-off is acceptable because the retained content co
 
 ---
 
-# ✅ Optimization 2 — Response Cache
+# Optimization 2 — Response Cache
 
 ### Objective
 
@@ -374,20 +374,22 @@ In a production environment, a distributed cache such as Redis would be preferre
 
 ---
 
-# 📊 Token Optimization Results
+# Token Optimization Results
 
-The following metrics were captured from a sample request:
+The following metrics were captured from an actual execution of the pipeline.
 
-| Metric | Before | After |
-|----------|-------:|------:|
-| Total Tokens | **375** | **104** |
-| Tokens Saved | — | **271** |
-| Reduction | — | **72.27%** |
-| Latency | — | **15.86 ms** |
-
+| Metric | Value | Description |
+|--------|------:|-------------|
+| **Before Tokens** | **375** | Tokens before context compression |
+| **After Tokens** | **104** | Tokens sent to the Reasoner after optimization |
+| **Tokens Saved** | **271** | Total tokens eliminated |
+| **Reduction** | **72.27%** | Overall token reduction achieved |
+| **Latency** | **15.86 ms** | Total pipeline execution time |
+| **Cache Hit** | ❌ No | Request processed without cache |
+| **Retries** | **0** | No retries were required |
 ---
 
-# 📈 Performance Summary
+# Performance Summary
 
 | Metric | Result |
 |----------|--------|
@@ -400,7 +402,7 @@ The following metrics were captured from a sample request:
 
 ---
 
-# 💡 Engineering Decisions
+# Engineering Decisions
 
 Several implementation choices were intentionally made to balance simplicity, performance, and readability.
 
@@ -449,7 +451,7 @@ These metrics make performance improvements observable and easier to evaluate.
 
 ---
 
-# 📷 Sample Response
+# Sample Response
 
 ```json
 {
@@ -467,13 +469,13 @@ These metrics make performance improvements observable and easier to evaluate.
 
 ---
 
-## 📌 Outcome
+## Outcome
 
 By combining **Context Compression** and **Response Caching**, the pipeline achieved a **72.27% reduction in token usage** while preserving response quality and improving overall efficiency.
 
 These optimizations demonstrate practical techniques commonly used in modern AI systems to reduce operational cost and improve scalability.
 
-# 🛠️ Part 2 — Debugging & Observability
+# Part 2 — Debugging & Observability
 
 ## Problem Statement
 
@@ -494,7 +496,7 @@ This project follows that philosophy by treating every pipeline stage as an obse
 
 ---
 
-# 🔍 Debugging Strategy
+# Debugging Strategy
 
 The debugging process follows a structured workflow.
 
@@ -534,7 +536,7 @@ The debugging process follows a structured workflow.
 
 ---
 
-# 🧩 Step 1 — Reproduce the Issue
+# Step 1 — Reproduce the Issue
 
 The first objective is always to reproduce the problem consistently.
 
@@ -549,7 +551,7 @@ Consistent reproduction is essential before attempting any fixes.
 
 ---
 
-# 📜 Step 2 — Inspect Request Logs
+# Step 2 — Inspect Request Logs
 
 Each incoming request receives a unique Request ID.
 
@@ -564,7 +566,7 @@ This makes it easy to trace a request across every stage of the pipeline.
 
 ---
 
-# 🧠 Step 3 — Validate Planner Output
+# Step 3 — Validate Planner Output
 
 The planner is responsible for interpreting the user's request.
 
@@ -578,7 +580,7 @@ If the planner produces incorrect metadata, downstream agents are likely to fail
 
 ---
 
-# 📚 Step 4 — Inspect Retrieved Context
+# Step 4 — Inspect Retrieved Context
 
 The Retriever selects information from the knowledge base.
 
@@ -593,7 +595,7 @@ Incorrect retrieval often leads to incorrect reasoning.
 
 ---
 
-# ✂️ Step 5 — Verify Context Compression
+# Step 5 — Verify Context Compression
 
 Before forwarding the context to the Reasoner:
 
@@ -613,7 +615,7 @@ This makes optimization measurable rather than subjective.
 
 ---
 
-# 🤖 Step 6 — Validate Reasoner Output
+# Step 6 — Validate Reasoner Output
 
 The Reasoner generates the response using the optimized context.
 
@@ -626,7 +628,7 @@ Checks include:
 
 ---
 
-# ✅ Step 7 — Validate Final Response
+# Step 7 — Validate Final Response
 
 Before returning data to the client:
 
@@ -638,7 +640,7 @@ Validation helps prevent malformed API responses.
 
 ---
 
-# 🎨 Step 8 — Formatter
+# Step 8 — Formatter
 
 The Formatter creates a standardized JSON response.
 
@@ -655,7 +657,7 @@ This ensures consistency across all API responses.
 
 ---
 
-# 📊 Step 9 — Metrics & Observability
+# Step 9 — Metrics & Observability
 
 Every pipeline execution records execution metrics.
 
@@ -675,7 +677,7 @@ Captured information includes:
 
 ---
 
-# 🛰️ Observability Features
+# Observability Features
 
 The project exposes multiple endpoints to monitor the pipeline.
 
@@ -690,7 +692,7 @@ These endpoints make the internal behavior of the application transparent and ea
 
 ---
 
-# ⚠️ Error Handling
+# Error Handling
 
 The application includes centralized error handling to ensure failures are reported consistently.
 
@@ -705,7 +707,7 @@ Rather than crashing, the API returns structured error responses that are easier
 
 ---
 
-# 📈 Example Execution Trace
+# Example Execution Trace
 
 ```
 Request Received
@@ -723,7 +725,7 @@ Total Latency ....... 15.86 ms
 
 ---
 
-# 💡 Engineering Decisions
+# Engineering Decisions
 
 Several design choices improve the maintainability of the pipeline.
 
@@ -747,7 +749,7 @@ Every API response follows a consistent JSON structure, simplifying client-side 
 
 ---
 
-# 📌 Outcome
+# Outcome
 
 The debugging approach focuses on **observability rather than guesswork**.
 
@@ -764,7 +766,7 @@ the pipeline becomes significantly easier to diagnose, maintain, and extend.
 
 This mirrors the debugging practices commonly used in production backend and AI systems.
 
-# 🚀 Part 3 — CI/CD & Deployment
+# Part 3 — CI/CD & Deployment
 
 ## Problem Statement
 
@@ -776,7 +778,7 @@ To address this, the project includes Docker configuration and a GitHub Actions 
 
 ---
 
-# ⚙️ Continuous Integration (CI)
+# Continuous Integration (CI)
 
 A GitHub Actions workflow is configured to automatically execute whenever code is pushed or merged.
 
@@ -828,7 +830,7 @@ Automating these steps ensures that every change is validated before being merge
 
 ---
 
-# 🐳 Docker Configuration
+# Docker Configuration
 
 To simplify deployment across environments, the project includes:
 
@@ -842,7 +844,7 @@ These files allow the application to run consistently regardless of the host ope
 
 ---
 
-# 📦 Deployment Strategy
+# Deployment Strategy
 
 The deployment workflow is designed around a staging-first approach.
 
@@ -872,7 +874,7 @@ Deploying to staging before production helps identify issues early and reduces d
 
 ---
 
-# 🔐 Secrets Management
+# Secrets Management
 
 Protecting sensitive information is a critical part of any deployment pipeline.
 
@@ -896,7 +898,7 @@ This approach keeps sensitive information separate from the source code and foll
 
 ---
 
-# 🔄 Rollback Strategy
+# Rollback Strategy
 
 Even after successful testing, deployments can occasionally fail.
 
@@ -954,7 +956,7 @@ Once production is stable:
 
 ---
 
-# 📈 Deployment Best Practices
+# Deployment Best Practices
 
 The project follows several practices commonly used in production environments.
 
@@ -970,7 +972,7 @@ The project follows several practices commonly used in production environments.
 
 ---
 
-# 🏁 Assignment Coverage
+# Assignment Coverage
 
 | Requirement | Implementation |
 |-------------|----------------|
@@ -984,7 +986,7 @@ The project follows several practices commonly used in production environments.
 
 ---
 
-# 🎯 Key Takeaways
+# Key Takeaways
 
 This project demonstrates that building AI systems involves much more than generating responses.
 
@@ -1000,7 +1002,7 @@ The implementation focuses on engineering practices that improve reliability, ma
 These practices form the foundation of scalable AI applications in production environments.
 
 
-# 🌐 API Documentation
+# API Documentation
 
 ## Base URL
 
@@ -1010,7 +1012,7 @@ http://localhost:3000
 
 ---
 
-## 🔹 GET /
+## GET /
 
 Returns the application status.
 
@@ -1033,7 +1035,7 @@ GET /
 
 ---
 
-## 🔹 GET /health
+## GET /health
 
 Returns application health information.
 
@@ -1061,7 +1063,7 @@ GET /health
 
 ---
 
-## 🔹 POST /query
+## POST /query
 
 Executes the complete AI pipeline.
 
@@ -1100,25 +1102,25 @@ POST /query
 
 ---
 
-## 🔹 GET /metrics
+##  GET /metrics
 
 Returns pipeline execution statistics.
 
 ---
 
-## 🔹 GET /debug
+##  GET /debug
 
 Returns request traces and stage execution details.
 
 ---
 
-## 🔹 GET /demo
+##  GET /demo
 
 Returns a demonstration of the implemented token optimization strategy.
 
 ---
 
-# 🚀 Getting Started
+#  Getting Started
 
 ## Prerequisites
 
@@ -1177,7 +1179,7 @@ npm start
 
 ---
 
-# 🐳 Docker
+#  Docker
 
 Build Docker image
 
@@ -1197,23 +1199,8 @@ Or
 docker compose up
 ```
 
----
 
-# 📸 Project Preview
-
-> Add screenshots before submitting.
-
-| Feature | Screenshot |
-|-----------|------------|
-| Home Endpoint | *(Insert image)* |
-| Health Endpoint | *(Insert image)* |
-| Query Endpoint | *(Insert image)* |
-| Metrics Endpoint | *(Insert image)* |
-| Debug Endpoint | *(Insert image)* |
-
----
-
-# 🔮 Future Improvements
+#  Future Improvements
 
 Although the current implementation fulfills the assignment requirements, several enhancements could make the system production-ready.
 
@@ -1263,7 +1250,7 @@ Although the current implementation fulfills the assignment requirements, severa
 
 ---
 
-# 📚 Lessons Learned
+#  Lessons Learned
 
 This project reinforced several important software engineering principles:
 
@@ -1276,7 +1263,7 @@ This project reinforced several important software engineering principles:
 
 ---
 
-# 👩‍💻 Author
+#  Author
 
 **Priyamvada Chaudhary**
 
@@ -1289,7 +1276,7 @@ LinkedIn: https://www.linkedin.com/in/priyamvada7078/
 
 ---
 
-# 📄 License
+#  License
 
 This repository was created as part of the **Integral AI Engineering Internship Assignment (2026)**.
 
@@ -1299,7 +1286,7 @@ It is intended for educational and evaluation purposes.
 
 <div align="center">
 
-## ⭐ Thank You
+##  Thank You
 
 Thank you for reviewing this project.
 
