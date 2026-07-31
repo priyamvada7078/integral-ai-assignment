@@ -1,33 +1,31 @@
+const knowledgeBase = require("../data/knowledgeBase");
+
 function retriever(plan) {
 
-    const largeContext = `
-Artificial Intelligence (AI) enables machines to perform tasks that normally require human intelligence.
+    const query = plan.originalQuery.toLowerCase();
 
-Large Language Models are trained on huge datasets.
+    let context = knowledgeBase.default;
 
-Generative AI can generate code.
+    if (query.includes("ai"))
+        context = knowledgeBase.ai;
 
-Generative AI can summarize documents.
+    else if (query.includes("docker"))
+        context = knowledgeBase.docker;
 
-Generative AI powers chatbots.
+    else if (query.includes("node"))
+        context = knowledgeBase.nodejs;
 
-Prompt engineering improves responses.
+    else if (query.includes("mongo"))
+        context = knowledgeBase.mongodb;
 
-Vector databases improve retrieval.
-
-Token optimization reduces latency.
-
-Caching reduces API costs.
-
-Retrieval-Augmented Generation improves accuracy.
-
-`.repeat(40);
+    else if (query.includes("github"))
+        context = knowledgeBase.github;
 
     return {
 
         ...plan,
 
-        context: largeContext
+        context
 
     };
 

@@ -1,14 +1,14 @@
 const cache = new Map();
 
-function getCached(key) {
-    return cache.get(key);
+function getCachedResponse(query) {
+    return cache.get(query);
 }
 
-function setCache(key, value) {
-    cache.set(key, value);
+function saveResponse(query, response) {
+    cache.set(query, response);
 }
 
 module.exports = {
-    getCached,
-    setCache
+    getCachedResponse,
+    saveResponse
 };

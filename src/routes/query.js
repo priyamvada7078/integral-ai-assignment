@@ -4,20 +4,63 @@ const router = express.Router();
 
 const runPipeline = require("../pipeline/pipeline");
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
 
-    const { query } = req.body;
+    try {
 
-    if (!query) {
-        return res.status(400).json({
-            success: false,
-            message: "Query is required"
+        const { query } = req.body;
+
+        if (!query || query.trim() === "") {
+
+            return res.status(400).json({
+
+                success: false,
+
+                requestId: req.requestId,
+
+                message: "Query is required"
+
+            });
+
+        }
+
+        console.log(
+
+            `[${req.requestId}] Incoming Query -> ${query}`
+
+        );
+
+        const result = await runPipeline(
+
+            query,
+
+            req.requestId
+
+        );
+
+        console.log(
+
+            `[${req.requestId}] Request Completed`
+
+        );
+
+        res.status(200).json({
+
+            requestId: req.requestId,
+
+            ...result
+
         });
+
     }
 
-    const result = await runPipeline(query);
+    catch (err) {
 
-    res.status(200).json(result);
+        err.stage = err.stage || "Query Route";
+
+        next(err);
+
+    }
 
 });
 
