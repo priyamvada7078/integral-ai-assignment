@@ -227,16 +227,41 @@ integral-ai-assignment
 
 # 📸 Preview
 
-> **Recommended:** Add screenshots here before submitting.
+# 📸 Project Screenshots
 
-| Endpoint | Preview |
-|----------|---------|
-| `/query` | *(Insert screenshot)* |
-| `/metrics` | *(Insert screenshot)* |
-| `/debug` | *(Insert screenshot)* |
-| `/health` | *(Insert screenshot)* |
+## 🏠 Home Endpoint
+
+![Home Endpoint](screenshots/home.png)
 
 ---
+
+## ❤️ Health Endpoint
+
+![Health Endpoint](screenshots/health.png)
+
+---
+
+## 🤖 AI Query Pipeline
+
+![Query Endpoint](screenshots/query.png)
+
+---
+
+## 📊 Metrics Endpoint
+
+![Metrics Endpoint](screenshots/metrics.png)
+
+---
+
+## 🔍 Debug Endpoint
+
+![Debug Endpoint](screenshots/debug.png)
+
+---
+
+## 💰 Token Optimization Demo
+
+![Demo Endpoint](screenshots/demo.png)
 
 # 📌 Part 1 — Token & Cost Optimization
 
